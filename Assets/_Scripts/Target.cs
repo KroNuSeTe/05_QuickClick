@@ -27,17 +27,15 @@ public class Target : MonoBehaviour {
     [Range (-4, -7)]
     public float startLocationY = -6;
 
+    [Header("")]
     private GameManager gameManager;
 
     public int pointValue;
 
     public ParticleSystem explosionParticle;
 
-    public bool trailSwordActive;
-
     // Start is called before the first frame update
     void Start () {
-
         _rigidbody = GetComponent<Rigidbody> ();
 
         _rigidbody.AddForce (RandomForce (), ForceMode.Impulse);
@@ -46,8 +44,6 @@ public class Target : MonoBehaviour {
 
         //gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gameManager = FindObjectOfType<GameManager> ();
-        trailSwordActive = false;
-
     }
 
     /// <summary>
@@ -76,7 +72,6 @@ public class Target : MonoBehaviour {
 
     private void OnMouseOver() {
         if (Input.GetMouseButton(0)){
-            trailSwordActive = false;
             if (gameManager.gameState == GameManager.GameState.inGame) {
                 Destroy (gameObject);
                 Instantiate (explosionParticle, transform.position, explosionParticle.transform.rotation);
@@ -88,7 +83,6 @@ public class Target : MonoBehaviour {
                 }      
             }
         }
-        trailSwordActive = true;
     }
 
     private void OnTriggerEnter (Collider other) {
