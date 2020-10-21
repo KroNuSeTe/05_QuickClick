@@ -574,7 +574,7 @@ MonoBehaviour:
   gameOverText: {fileID: 1741336186}
   restartButton: {fileID: 1272369582}
   startMenu: {fileID: 1860446495}
-  swordFollow: {fileID: 0}
+  swordFollow: {fileID: 1146709395}
 --- !u!4 &521444277
 Transform:
   m_ObjectHideFlags: 0
