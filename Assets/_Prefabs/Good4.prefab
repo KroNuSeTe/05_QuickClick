@@ -133,3 +133,10 @@ MonoBehaviour:
   pointValue: 7
   explosionParticle: {fileID: 2088871590894813759, guid: 745208c9d6e104225bd99e1ab894e3bb,
     type: 3}
+  splashAudio:
+  - {fileID: 8300000, guid: 33fac688b2f48ee4696c9b60cdf498cc, type: 3}
+  - {fileID: 8300000, guid: 173bf2a6c7cacf84da876c66cc67fe75, type: 3}
+  - {fileID: 8300000, guid: 6382d88c5229dae4ea0be9be2767ebee, type: 3}
+  - {fileID: 8300000, guid: c37916a9dfca89f4e8ac73984e9bf461, type: 3}
+  - {fileID: 8300000, guid: bcf3f91fdb6805a4dbbaa5e2796fd37e, type: 3}
+  bombAudio: {fileID: 8300000, guid: 3783cf489114ca1498ebba1069548717, type: 3}

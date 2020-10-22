@@ -67,60 +67,58 @@ public class GameManager : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        /*float totalTime = startTime-Time.time;
+        float totalTime = Time.time-startTime;
         if (gameState == GameState.inGame){
-            if (totalTime<=)
-            else if (totalTime <= 6)
+            
+            if (totalTime > 6 && totalTime < 12)
             {
                 level = "level 2";
                 levelText.text = "level2";
                 Time.timeScale = 1.1f;
             }
-            else if (Time.time >= 12)
+            else if (totalTime > 12 && totalTime < 18)
             {
                 level = "level 3";
                 levelText.text = "level3";
                 Time.timeScale = 1.3f;
             }
-            if (Time.time == 18)
+            else if (totalTime > 18 && totalTime < 24)
             {
                 level = "level 4";
                 levelText.text = "level4";
                 Time.timeScale = 1.5f;
             }
-            if (Time.time == 24)
+            else if (totalTime > 24 && totalTime < 30)
             {
                 level = "level 5";
                 levelText.text = "level5";
                 Time.timeScale = 1.6f;
             }
-            if (Time.time == 30)
+            else if (totalTime > 30 && totalTime < 36)
             {
                 level = "level 6";
                 levelText.text = "level6";
                 Time.timeScale = 1.8f;
             }
-            if (Time.time == 36)
+            else if (totalTime > 36 && totalTime < 42)
             {
                 level = "level 7";
                 levelText.text = "level7";
                 Time.timeScale = 1.9f;
             }
-            if (Time.time == 42)
+            else if (totalTime > 42 && totalTime < 48)
             {
                 level = "level 8";
                 levelText.text = "level8";
                 Time.timeScale = 2f;
             }
-            if (Time.time == 48)
+            else if (totalTime > 48 && totalTime < 54)
             {
                 level = "level 9";
                 levelText.text = "level9";
                 Time.timeScale = 2.2f;
             }
         }
-        */
-        //TODO: Implementar la dificultad correctamente
     }
 
     /// <summary>
@@ -178,7 +176,6 @@ public class GameManager : MonoBehaviour {
         gameOverText.gameObject.SetActive (true);
         restartButton.gameObject.SetActive (true);
         Time.timeScale = 1f;
-        Time.
     }
 
     /// <summary>

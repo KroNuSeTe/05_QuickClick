@@ -27,12 +27,14 @@ public class Target : MonoBehaviour {
     [Range (-4, -7)]
     public float startLocationY = -6;
 
-    [Header("")]
     private GameManager gameManager;
 
+    [Header ("")]
     public int pointValue;
 
     public ParticleSystem explosionParticle;
+
+    private SoundEffectsManager soundEffectsManager;
 
     // Start is called before the first frame update
     void Start () {
@@ -44,6 +46,8 @@ public class Target : MonoBehaviour {
 
         //gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gameManager = FindObjectOfType<GameManager> ();
+
+        soundEffectsManager = FindObjectOfType<SoundEffectsManager>();
     }
 
     /// <summary>
@@ -73,14 +77,16 @@ public class Target : MonoBehaviour {
     private void OnMouseOver() {
         if (Input.GetMouseButton(0)){
             if (gameManager.gameState == GameManager.GameState.inGame) {
-                Destroy (gameObject);
                 Instantiate (explosionParticle, transform.position, explosionParticle.transform.rotation);
                 if (gameObject.CompareTag ("ItemBad")) {
+                    soundEffectsManager.PlayBombAudioClip();
                     gameManager.GameOver ();
                 } 
                 if (gameObject.CompareTag("ItemGood")){
+                    soundEffectsManager.PlaySplashAudioClip();
                     gameManager.UpdateScore(pointValue);
-                }      
+                }
+                Destroy (gameObject);      
             }
         }
     }
