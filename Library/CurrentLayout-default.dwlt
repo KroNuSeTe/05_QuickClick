@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 230, y: 271}
   m_MaxSize: {x: 10000, y: 10021}
   vertical: 0
-  controlID: 105
+  controlID: 34
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,8 +243,8 @@ MonoBehaviour:
     y: 0
     width: 413
     height: 690
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 200, y: 221}
+  m_MaxSize: {x: 4000, y: 4021}
   m_ActualView: {fileID: 34}
   m_Panes:
   - {fileID: 34}
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 221}
   m_MaxSize: {x: 4000, y: 4021}
   vertical: 0
-  controlID: 25
+  controlID: 141
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -293,8 +293,8 @@ MonoBehaviour:
     y: 0
     width: 1317
     height: 388
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 100, y: 121}
+  m_MaxSize: {x: 4000, y: 4021}
   m_ActualView: {fileID: 37}
   m_Panes:
   - {fileID: 37}
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 121}
   m_MaxSize: {x: 4000, y: 4021}
   vertical: 0
-  controlID: 47
+  controlID: 239
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_MinSize: {x: 230, y: 271}
   m_MaxSize: {x: 10000, y: 10021}
   vertical: 1
-  controlID: 216
+  controlID: 183
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -396,8 +396,8 @@ MonoBehaviour:
     y: 0
     width: 436
     height: 691
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 275, y: 71}
+  m_MaxSize: {x: 4000, y: 4021}
   m_ActualView: {fileID: 33}
   m_Panes:
   - {fileID: 33}
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 71}
   m_MaxSize: {x: 4000, y: 4021}
   vertical: 0
-  controlID: 208
+  controlID: 26
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 187
+  controlID: 97
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -538,8 +538,8 @@ MonoBehaviour:
     y: 0
     width: 617
     height: 987
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 35}
   m_Panes:
   - {fileID: 35}
@@ -585,20 +585,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/JMO Assets/Cartoon FX/CFX3 Prefabs/Misc
+    - Assets/_Scripts
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/JMO Assets/Cartoon FX/CFX3 Prefabs/Misc
+  - Assets/_Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: "D:\\BackupWindows7\\Dise\xF1o\\CursosUnity\\DominaelMundodelosVG\\05_QuickClick"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 863a0000
-    m_LastClickedID: 14982
-    m_ExpandedIDs: 00000000ec360000ee360000f0360000f2360000f4360000f6360000103700002e37000000ca9a3b
+    m_SelectedIDs: 44370000
+    m_LastClickedID: 14148
+    m_ExpandedIDs: 000000002437000026370000283700002a3700002c3700002e370000303700003237000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -626,7 +626,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ec360000ee360000f0360000f2360000f4360000f6360000
+    m_ExpandedIDs: 000000002437000026370000283700002a3700002c3700002e3700003037000032370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1516,9 +1516,9 @@ MonoBehaviour:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 240}
-    m_SelectedIDs: 863a0000
-    m_LastClickedID: 14982
-    m_ExpandedIDs: 00000000ec360000ee360000f0360000f2360000f4360000f6360000103700002e37000000ca9a3b
+    m_SelectedIDs: 7e370000
+    m_LastClickedID: 14206
+    m_ExpandedIDs: 000000002437000026370000283700002a3700002c3700002e370000303700003237000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1546,7 +1546,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ec360000ee360000f0360000f2360000f4360000f6360000
+    m_ExpandedIDs: 000000002437000026370000283700002a3700002c3700002e3700003037000032370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1577,18 +1577,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c62300007436000096370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: CFX3_Skull_Explosion1
-      m_OriginalName: CFX3_Skull_Explosion1
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 18758
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 14}
     m_CreateAssetUtility:
@@ -1669,9 +1669,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b4850000
-      m_LastClickedID: 34228
-      m_ExpandedIDs: d64cffffb4850000
+      m_SelectedIDs: d0330000
+      m_LastClickedID: 13264
+      m_ExpandedIDs: 6afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1724,14 +1724,14 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: a60cd742c5a8cce468f7edee6452c136
   m_Gizmos: 1
-  m_SceneIsLit: 0
+  m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 1, z: 0}
+    m_Target: {x: 76.597496, y: 616.43945, z: -5.866928}
     speed: 2
     m_Value: {x: 0, y: 1, z: 0}
   m_RenderMode: 0
@@ -1746,7 +1746,7 @@ MonoBehaviour:
   m_SceneViewState:
     showFog: 1
     showMaterialUpdate: 1
-    showSkybox: 0
+    showSkybox: 1
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -1781,9 +1781,9 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.19394183, y: 0.035893537, z: -0.007101869, w: -0.9803391}
     speed: 2
-    m_Value: {x: -0.19394019, y: 0.03589323, z: -0.007101809, w: -0.9803308}
+    m_Value: {x: -0.19394185, y: 0.035893537, z: -0.0071018697, w: -0.98033917}
   m_Size:
-    m_Target: 2.4000173
+    m_Target: 95.653946
     speed: 2
     m_Value: 2.4000173
   m_Ortho:

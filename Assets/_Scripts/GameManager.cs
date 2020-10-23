@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour {
 
         StartCoroutine (SpawnTarget ());
         score = 0;
-        UpdateScore (0);
+        UpdateScore (0-difficultyPlusScore);
     }
 
     IEnumerator SpawnTarget () {
