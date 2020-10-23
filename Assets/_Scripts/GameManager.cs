@@ -45,75 +45,69 @@ public class GameManager : MonoBehaviour {
 
     public GameObject startMenu;
 
+    [Header ("Hearts Panel")]
+    public GameObject heartsPanel;
+    public List<GameObject> hearts;
+    public Sprite heartBrokenImage;
+    public ParticleSystem heartBrokenParticle;
+    private int numberOfHearts = 3;
+
     public GameObject swordFollow;
-
-    private int numberOfLives = 3;
-
     private string level;
-
     private float startTime;
 
+    private SoundEffectsManager soundEffectsManager;
+
+    private int difficultyPlusScore;
+
     private void Start () {
+        soundEffectsManager = FindObjectOfType<SoundEffectsManager> ();
         ShowMaxScore ();
-        UpdateScore(0);
+        UpdateScore (0);
     }
 
-    private void Update() {
-        if (Input.GetMouseButtonDown(0)){
-            swordFollow.SetActive(true);
-        } else if (Input.GetMouseButtonUp(0)){
-            swordFollow.SetActive(false);
+    private void Update () {
+        if (Input.GetMouseButtonDown (0)) {
+            soundEffectsManager.PlayKatanaAudioClip ();
+            swordFollow.SetActive (true);
+        } else if (Input.GetMouseButtonUp (0)) {
+            swordFollow.SetActive (false);
         }
     }
 
-    private void FixedUpdate() {
-        float totalTime = Time.time-startTime;
-        if (gameState == GameState.inGame){
-            
-            if (totalTime > 6 && totalTime < 12)
-            {
+    private void FixedUpdate () {
+        float totalTime = Time.time - startTime;
+        if (gameState == GameState.inGame) {
+
+            if (totalTime > 6 && totalTime < 12) {
                 level = "level 2";
                 levelText.text = "level2";
                 Time.timeScale = 1.1f;
-            }
-            else if (totalTime > 12 && totalTime < 18)
-            {
+            } else if (totalTime > 12 && totalTime < 18) {
                 level = "level 3";
                 levelText.text = "level3";
                 Time.timeScale = 1.3f;
-            }
-            else if (totalTime > 18 && totalTime < 24)
-            {
+            } else if (totalTime > 18 && totalTime < 24) {
                 level = "level 4";
                 levelText.text = "level4";
                 Time.timeScale = 1.5f;
-            }
-            else if (totalTime > 24 && totalTime < 30)
-            {
+            } else if (totalTime > 24 && totalTime < 30) {
                 level = "level 5";
                 levelText.text = "level5";
                 Time.timeScale = 1.6f;
-            }
-            else if (totalTime > 30 && totalTime < 36)
-            {
+            } else if (totalTime > 30 && totalTime < 36) {
                 level = "level 6";
                 levelText.text = "level6";
                 Time.timeScale = 1.8f;
-            }
-            else if (totalTime > 36 && totalTime < 42)
-            {
+            } else if (totalTime > 36 && totalTime < 42) {
                 level = "level 7";
                 levelText.text = "level7";
                 Time.timeScale = 1.9f;
-            }
-            else if (totalTime > 42 && totalTime < 48)
-            {
+            } else if (totalTime > 42 && totalTime < 48) {
                 level = "level 8";
                 levelText.text = "level8";
                 Time.timeScale = 2f;
-            }
-            else if (totalTime > 48 && totalTime < 54)
-            {
+            } else if (totalTime > 48 && totalTime < 54) {
                 level = "level 9";
                 levelText.text = "level9";
                 Time.timeScale = 2.2f;
@@ -125,15 +119,25 @@ public class GameManager : MonoBehaviour {
     /// Método que inicia la partida cambiando el valor del estado del juego
     /// </summary>
     /// <param name="difficulty"> Número entero que indica el grado de dificultad del juego </param>
-    public void StartGame (float difficulty) {
-        levelText.gameObject.SetActive(true);
+    public void StartGame (float difficulty, string typeDifficulty) {
+        levelText.gameObject.SetActive (true);
         levelText.text = "level1";
         startTime = Time.time;
 
         gameState = GameState.inGame;
         startMenu.SetActive (false);
+        heartsPanel.SetActive (true);
 
         spawnRate /= difficulty;
+
+        // Cambiar puntuación Targets dependiendo de la dificultad
+        if (typeDifficulty == "easy") {
+            difficultyPlusScore = 0;
+        } else if (typeDifficulty == "normal") {
+            difficultyPlusScore = 2;
+        } else if (typeDifficulty == "hard") {
+            difficultyPlusScore = 5;
+        }
 
         StartCoroutine (SpawnTarget ());
         score = 0;
@@ -153,7 +157,7 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     /// <param name="scoreToAdd"> Número de puntos a añadir a la puntuación global</param>
     public void UpdateScore (int scoreToAdd) {
-        score += scoreToAdd;
+        score += scoreToAdd + difficultyPlusScore;
         scoreText.text = "Score: " + score;
     }
 
@@ -170,22 +174,53 @@ public class GameManager : MonoBehaviour {
     /// Muestra el mensaje de Game Over, muestra el botón de Restart 
     /// y Pausa el tiempo de juego
     /// </summary>
-    public void GameOver () {
-        SetHiScore();
-        gameState = GameState.gameOver;
-        gameOverText.gameObject.SetActive (true);
-        restartButton.gameObject.SetActive (true);
-        Time.timeScale = 1f;
+    public void GameOver (string itemType) {
+
+        if (itemType == "Good") {
+            numberOfHearts--;
+            if (numberOfHearts >= 0) {
+                HeartBrokenAndParticle();
+            }
+
+        } else {
+            // itemType = "Bad"
+            for (int i=numberOfHearts; i>0; i--){
+                numberOfHearts--;
+                HeartBrokenAndParticle();
+            }
+            numberOfHearts = 0;
+        }
+
+        if (numberOfHearts <= 0) {
+            SetHiScore ();
+            gameState = GameState.gameOver;
+            gameOverText.gameObject.SetActive (true);
+            restartButton.gameObject.SetActive (true);
+            Time.timeScale = 1f;
+        }
+    }
+
+    /// <summary>
+    /// Añade unas Particulas, cambia el sprite por el broken heart y baja la opacidad
+    /// </summary>
+    private void HeartBrokenAndParticle(){
+                Image heartImage = hearts[numberOfHearts].GetComponent<Image> ();
+                Vector3 posHeartBrokenParticle = Camera.main.ScreenToWorldPoint(heartImage.transform.position);
+                Instantiate (heartBrokenParticle, posHeartBrokenParticle, heartBrokenParticle.transform.rotation);
+                heartImage.sprite = heartBrokenImage;
+                Color tempColor = heartImage.color;
+                tempColor.a = 0.5f;
+                heartImage.color = tempColor;
     }
 
     /// <summary>
     /// Actualiza el High Score y lo muestra en pantalla
     /// </summary>
-    private void SetHiScore(){
+    private void SetHiScore () {
         int hiScore = PlayerPrefs.GetInt (HI_SCORE, 0);
         if (score > hiScore) {
             PlayerPrefs.SetInt (HI_SCORE, score);
-            ShowMaxScore();
+            ShowMaxScore ();
             //TODO: Si hay nueva puntuación máxima, animarla!!!
         }
     }

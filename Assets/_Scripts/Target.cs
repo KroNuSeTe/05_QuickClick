@@ -80,7 +80,7 @@ public class Target : MonoBehaviour {
                 Instantiate (explosionParticle, transform.position, explosionParticle.transform.rotation);
                 if (gameObject.CompareTag ("ItemBad")) {
                     soundEffectsManager.PlayBombAudioClip();
-                    gameManager.GameOver ();
+                    gameManager.GameOver ("Bad");
                 } 
                 if (gameObject.CompareTag("ItemGood")){
                     soundEffectsManager.PlaySplashAudioClip();
@@ -95,7 +95,7 @@ public class Target : MonoBehaviour {
         if (other.CompareTag ("KillZone")) {
             Destroy (gameObject);
             if (gameObject.CompareTag ("ItemGood")) {
-                gameManager.GameOver ();
+                gameManager.GameOver ("Good");
             }
         }
     }

@@ -11,6 +11,7 @@ public class DificultyButton : MonoBehaviour
 
     [Range (1,3)]
     public float difficulty;
+    public string typeDifficulty;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,6 @@ public class DificultyButton : MonoBehaviour
 
     void SetDifficulty(){
             Debug.Log("The Button " + gameObject.name + " is pushed");
-            gameManager.StartGame(difficulty);
+            gameManager.StartGame(difficulty, typeDifficulty);
     }
 }
